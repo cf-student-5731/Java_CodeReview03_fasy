@@ -32,7 +32,7 @@ public class Station {
     }
 
     public void addBike(int bikeId){
-        if(this.bikesInStation.size() <= 5) {
+        if(this.bikesInStation.size() < 5) {
             this.bikesInStation.add(bikeId);
         }
         else{
