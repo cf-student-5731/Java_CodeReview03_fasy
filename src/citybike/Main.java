@@ -128,6 +128,8 @@ public class Main {
 		s02.addBike(14);
 		s03.addBike(4);
 		s12.addBike(9);
+		s12.addBike(18);
+
 
 
 //	manually to make Stations exist outside the Arraylist
@@ -178,6 +180,7 @@ public class Main {
 		u02.returnBike(s12);
 		u03.returnBike(s12);
 		u04.returnBike(s12);
+		u04.rentBike(b20);
 
 
 		b05.printBikeProperties();

@@ -66,10 +66,13 @@ public class User {
 
 	public void returnBike(Station station){
 		if(this.currentlyRentedBike !=0) {
-			Main.viennaStations.get(station.getStationId()).addBike(this.currentlyRentedBike);
-			Main.viennaBikes.get(this.currentlyRentedBike).setState(Bike.State.CanBeRented);
+			boolean free = Main.viennaStations.get(station.getStationId()).addBike(this.currentlyRentedBike);
+						Main.viennaBikes.get(this.currentlyRentedBike).setState(Bike.State.CanBeRented);
 			System.out.println();
-			System.out.println("Bike " + this.currentlyRentedBike + " is returned by " + this.getName() + " " + this.getSurName() + " to Station " + station.getLocation());
+			if(free){
+				System.out.println("Bike " + this.currentlyRentedBike + " is returned by " + this.getName() + " " + this.getSurName() + " to Station " + station.getLocation());
+			}
+
 			System.out.println();
 			this.currentlyRentedBike = 0;
 			this.rent.setRentEnd();

@@ -31,13 +31,16 @@ public class Station {
         this.location = location;
     }
 
-    public void addBike(int bikeId){
+    public boolean addBike(int bikeId){
+        boolean free = true;
         if(this.bikesInStation.size() < 5) {
             this.bikesInStation.add(bikeId);
         }
         else{
             System.out.println("This Station is already full!");
+            free = false;
         }
+        return free;
     }
 
     public ArrayList<Integer> getBikesInStation() {
