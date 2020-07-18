@@ -93,7 +93,7 @@ public class User {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("kk:mm dd.MM.yyyy");
 		System.out.printf("%-20s%-10s%-20s%-20s%n", "Name", "Bike Id", "Start", "End");
 		for (Rent rent : rents) {
-			System.out.printf("%-20s%-10d%-20s%-20s%n", this.getName()  + " " + this.getSurName(), this.rent.getBikeId(), dateFormat.format(rent.getRentStart().getTime()), dateFormat.format(rent.getRentEnd().getTime()));
+			System.out.printf("%-20s%-10d%-20s%-20s%n", this.getName()  + " " + this.getSurName(), rent.getBikeId(), dateFormat.format(rent.getRentStart().getTime()), dateFormat.format(rent.getRentEnd().getTime()));
 		}
 	}
 
