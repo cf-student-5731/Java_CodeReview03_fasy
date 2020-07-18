@@ -71,11 +71,12 @@ public class User {
 			System.out.println();
 			if(free){
 				System.out.println("Bike " + this.currentlyRentedBike + " is returned by " + this.getName() + " " + this.getSurName() + " to Station " + station.getLocation());
+				this.currentlyRentedBike = 0;
+				this.rent.setRentEnd();
 			}
 
 			System.out.println();
-			this.currentlyRentedBike = 0;
-			this.rent.setRentEnd();
+
 		}
 		else{
 			System.out.println();
@@ -96,7 +97,13 @@ public class User {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("kk:mm dd.MM.yyyy");
 		System.out.printf("%-20s%-10s%-20s%-20s%n", "Name", "Bike Id", "Start", "End");
 		for (Rent rent : rents) {
-			System.out.printf("%-20s%-10d%-20s%-20s%n", this.getName()  + " " + this.getSurName(), rent.getBikeId(), dateFormat.format(rent.getRentStart().getTime()), dateFormat.format(rent.getRentEnd().getTime()));
+			try{
+				System.out.printf("%-20s%-10d%-20s%-20s%n", this.getName()  + " " + this.getSurName(), rent.getBikeId(), dateFormat.format(rent.getRentStart().getTime()), dateFormat.format(rent.getRentEnd().getTime()));
+			}
+			catch(NullPointerException e){
+				System.out.printf("%-20s%-10d%-20s%n", this.getName()  + " " + this.getSurName(), rent.getBikeId(), dateFormat.format(rent.getRentStart().getTime()));
+			}
+
 		}
 	}
 

@@ -138,6 +138,7 @@ public class Main {
 		User u03 = new User("Mr.", "Smith");
 		User u04 = new User("Ms.", "Smith");
 		User u05 = new User("Steven", "Burglar");
+		User u06 = new User("Tina", "Thief");
 
 		users.put(u01.getUserId(), u01);
 		users.put(u02.getUserId(), u02);
@@ -184,9 +185,9 @@ public class Main {
 
 
 		b05.printBikeProperties();
-		u03.printUserProperties();
+		u04.printUserProperties();
 
-		u01.printUserHistory();
+		u03.printUserHistory();
 
     }   //main
 
