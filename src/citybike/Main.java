@@ -181,13 +181,13 @@ public class Main {
 		u02.returnBike(s12);
 		u03.returnBike(s12);
 		u04.returnBike(s12);
-		u04.rentBike(b20);
+		u04.rentBike(b07);
 
 
 		b05.printBikeProperties();
 		u04.printUserProperties();
 
-		u03.printUserHistory();
+		u04.printUserHistory();
 
     }   //main
 
